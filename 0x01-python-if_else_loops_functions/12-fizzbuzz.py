@@ -4,10 +4,10 @@ def fizzbuzz():
         if fb % 3 == 0 and fb % 5 == 0:
             print(f'FizzBuzz ', end='')
             continue
-        elif fb % 3 == 0:
+        elif fb % 3 == 0 and fb % 5 != 0:
             print(f'Fizz ', end='')
             continue
-        elif fb % 5 == 0:
+        elif fb % 5 == 0 and fb % 3 != 0:
             print(f'Buzz ', end='')
             continue
         print(f'{fb} ', end='')
