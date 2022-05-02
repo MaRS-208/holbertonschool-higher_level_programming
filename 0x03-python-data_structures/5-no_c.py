@@ -5,4 +5,3 @@ def no_c(my_string):
         if x != "c" and x != "C":
             my_list.append(x)
     return "".join(my_list)
-        
