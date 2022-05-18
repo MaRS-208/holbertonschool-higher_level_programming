@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-"""hola"""
+"""class"""
 
 
 class Square:
-    """ hola 2 """
+    """class II"""
     pass
