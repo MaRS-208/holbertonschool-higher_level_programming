@@ -1,0 +1,44 @@
+>>> add_integer(12)
+110 
+
+>>> add_integer(0)
+98
+
+>>> add_integer(-12)
+86
+
+>>> add_integer()
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+>>> add_integer(12, 52)
+64
+
+>>> add_integer(12, -52)
+-40
+
+>>> add_integer(-12, -52)
+-64
+
+>>> add_integer(12, 0)
+12
+
+>>> add_integer(-12, 0)
+-12
+
+>>> add_integer(60.75)
+158
+
+>>> add_integer(60.75, 0)
+60
+
+>>> add_integer(-60.75, 0)
+-60
+
+>>> add_integer(-60.75)
+38
+
+>>> add_integer("I'm a string")
+TypeError: a must be an integer
+
+>>> add_integer(10, "My name is Stringy")
+TypeError: b must be in integer
