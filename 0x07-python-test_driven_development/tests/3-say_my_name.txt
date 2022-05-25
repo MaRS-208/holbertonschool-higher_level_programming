@@ -1,0 +1,14 @@
+>>> say_my_name("Cyneheard", "Cyrillus")
+My name is Cyneheard Cyrillus
+
+>>> say_my_name("Mattheus", "Kennith")
+My name is Mattheus Kennith
+
+>>> say_my_name("Kain", 64)
+TypeError: last_name must be a string
+
+>>> say_my_name(82, "Alissa")
+TypeError: first_name must be a string
+
+>>> say_my_name("Kade", )
+My name is Kade
