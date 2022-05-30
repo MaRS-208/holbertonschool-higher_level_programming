@@ -6,4 +6,5 @@ from the specified class ; otherwise False """
 
 def inherits_from(obj, a_class):
     """ returns True o False """
-    return (issubclass(type(obj), a_class) and type(obj) != a_class)
+    if type(obj), a_class) and type(obj) != a_class:
+        return True
