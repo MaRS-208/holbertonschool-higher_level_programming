@@ -14,7 +14,7 @@ class Rectangle(Base):
         self.x = x
         self.y = y
         super().__init__(id)
-    
+
     @property
     def width(self):
         """width getter"""
@@ -28,7 +28,6 @@ class Rectangle(Base):
         if value <= 0:
             raise ValueError("width must be > 0")
         self.__width = value
-    
 
     @property
     def height(self):
@@ -43,7 +42,7 @@ class Rectangle(Base):
         if value <= 0:
             raise ValueError("height must be > 0")
         self.__height = value
-    
+
     @property
     def x(self):
         """x getter"""
@@ -57,7 +56,7 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("x must be >= 0")
         self.__x = value
-    
+
     @property
     def y(self):
         """y getter"""
@@ -89,7 +88,7 @@ class Rectangle(Base):
 
     def __str__(self):
         """str representation"""
-        s1 = f"[Rectangle] ({self.id}) " 
+        s1 = f"[Rectangle] ({self.id}) "
         s2 = f"{self.x}/{self.y} - {self.width}/{self.height}"
         return s1 + s2
 
@@ -108,16 +107,3 @@ class Rectangle(Base):
             self.x = args[3]
         if len(args) > 4:
             self.y = args[4]
-
-
-
-
-
-
-
-
-
-
-
-
-
