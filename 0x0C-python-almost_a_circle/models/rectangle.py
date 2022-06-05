@@ -106,3 +106,12 @@ class Rectangle(Base):
             self.x = args[3]
         if len(args) > 4:
             self.y = args[4]
+
+    def to_dictionary(self):
+        """dictionary representation"""
+        r = {   'x': self.x,
+                'y': self.y,
+                'id': self.id,
+                'height': self.height,
+                'width': self.width}
+        return r
