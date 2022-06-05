@@ -30,3 +30,7 @@ class Base:
     def from_json_string(json_string):
         """JSON string representation json_string"""
         pass
+
+    def create(cls, **dictionary):
+        """creates a dictionary"""
+        pass
