@@ -93,8 +93,11 @@ class Rectangle(Base):
         s2 = f"{self.x}/{self.y} - {self.width}/{self.height}"
         return s1 + s2
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """updates instance"""
+        if not args:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
         if len(args) > 0:
             self.id = args[0]
         if len(args) > 1:
