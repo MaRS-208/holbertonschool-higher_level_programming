@@ -26,3 +26,7 @@ class Base:
     def save_to_file(cls, list_objs):
         """JSON string representation of list_objs"""
         pass
+
+    def from_json_string(json_string):
+        """JSON string representation json_string"""
+        pass
