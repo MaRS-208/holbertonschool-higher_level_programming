@@ -18,6 +18,8 @@ class Square(Rectangle):
     @size.setter
     def size(self, value):
         """size setter"""
+        if type(value) != int:
+            raise TypeError("width must be an integer")
         self.width = value
         self.height = value
 
@@ -26,4 +28,5 @@ class Square(Rectangle):
         s1 = f"[Square] ({self.id}) "
         s2 = f"{self.x}/{self.y} - {self.size}"
         return s1 + s2
+
 
