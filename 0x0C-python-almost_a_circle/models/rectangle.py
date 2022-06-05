@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Write the class Rectangle that inherits from Base"""
 from models.base import Base
+import sys
 
 
 class Rectangle(Base):
@@ -91,5 +92,29 @@ class Rectangle(Base):
         s1 = f"[Rectangle] ({self.id}) " 
         s2 = f"{self.x}/{self.y} - {self.width}/{self.height}"
         return s1 + s2
+
+    def update(self, *args):
+        """updates instance"""
+        if len(args) > 0:
+            self.id = args[0]
+        if len(args) > 1:
+            self.width = args[1]
+        if len(args) > 2:
+            self.height = args[2]
+        if len(args) > 3:
+            self.x = args[3]
+        if len(args) > 4:
+            self.y = args[4]
+
+
+
+
+
+
+
+
+
+
+
 
 
