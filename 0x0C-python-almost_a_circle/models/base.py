@@ -30,12 +30,12 @@ class Base:
             list_not_empty.append(i.to_dictionary())
         with open(cls.__name__ + ".json", "w") as f:
             f.write(Base.to_json_string(list_not_empty))
-            
-         
 
     def from_json_string(json_string):
         """JSON string representation json_string"""
-        pass
+        if json_string is None:
+            return "[]"
+        return json.loads(json_string)
 
     def create(cls, **dictionary):
         """creates a dictionary"""
