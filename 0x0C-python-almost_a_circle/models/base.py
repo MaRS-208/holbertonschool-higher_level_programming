@@ -30,7 +30,7 @@ class Base:
                 f.write(cls.to_json_string(None))
         with open(cls.__name__ + ".json", "w") as f:
             f.write(cls.to_json_string([obj.to_dictionary()
-                for obj in list_objs]))
+            for obj in list_objs]))
 
     @staticmethod
     def from_json_string(json_string):
@@ -38,12 +38,14 @@ class Base:
         if json_string is None:
             return []
         return json.loads(json_string)
-    
+
     @classmethod
     def create(cls, **dictionary):
         """creates a dictionary"""
-        
-        return cls(**dictionary)
+        if json_string is None or len(json_string) == 0:
+            return []
+        else:
+            return json.loads(json_string)
 
     @classmethod
     def load_from_file(cls):
