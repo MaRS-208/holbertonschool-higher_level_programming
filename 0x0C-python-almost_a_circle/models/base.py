@@ -25,11 +25,12 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """JSON string representation of list_objs"""
-        list_not_empty = []
-        for i in list_objs:
-            list_not_empty.append(i.to_dictionary())
+        if list_objs is None or len(list_objs) == 0:
+            with open(cls.__name__ + ".json", "w") as f:
+                f.write(cls.to_json_string(None))
         with open(cls.__name__ + ".json", "w") as f:
-            f.write(Base.to_json_string(list_not_empty))
+            f.write(cls.to_json_string([obj.to_dictionary()
+                for obj in list_objs]))
 
     @staticmethod
     def from_json_string(json_string):
@@ -41,6 +42,7 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """creates a dictionary"""
+        
         return cls(**dictionary)
 
     @classmethod
