@@ -9,7 +9,7 @@ class Base:
 
     def __init__(self, id=None):
         """ init """
-        if not id is None:
+        if id is not None:
             self.id = id
         else:
             Base.__nb_objects += 1
@@ -18,7 +18,7 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """JSON string representation of list_dictionaries"""
-        if list_dictionaries == None:
+        if list_dictionaries is None:
             return "[]"
         return json.dumps(list_dictionaries)
 
