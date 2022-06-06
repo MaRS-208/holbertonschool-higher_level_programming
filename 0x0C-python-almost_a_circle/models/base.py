@@ -31,7 +31,7 @@ class Base:
         with open(cls.__name__ + ".json", "w") as f:
             f.write(Base.to_json_string(list_not_empty))
     
-    @classmethod
+    @staticmethod
     def from_json_string(json_string):
         """JSON string representation json_string"""
         if json_string is None:
