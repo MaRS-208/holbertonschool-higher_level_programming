@@ -34,3 +34,7 @@ class Base:
     def create(cls, **dictionary):
         """creates a dictionary"""
         pass
+
+    def load_from_file(cls):
+        """returns list of instances"""
+        pass
