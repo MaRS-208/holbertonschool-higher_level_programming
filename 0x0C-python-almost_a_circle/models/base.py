@@ -42,10 +42,12 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """creates a dictionary"""
-        if json_string is None or len(json_string) == 0:
-            return []
+        if cls.__name__ == 'Rectangle':
+            dummy = cls(1, 1)
         else:
-            return json.loads(json_string)
+            dummy = cls(1)
+        dummy.update(**dictionary)
+        return dummy
 
     @classmethod
     def load_from_file(cls):
