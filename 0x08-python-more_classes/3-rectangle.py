@@ -57,7 +57,7 @@ class Rectangle:
             for j in range(self.width):
                 out += "#"
             out += "\n"
-        return out [: -1]
+        return out[: -1]
 
     def __str__(self):
         """str representation"""
