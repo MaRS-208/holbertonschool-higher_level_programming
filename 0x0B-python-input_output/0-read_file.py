@@ -4,3 +4,5 @@
 
 def read_file(filename=""):
     """reads file"""
+    with open(filename, "r") as f:
+        print(f.read(), end="")
