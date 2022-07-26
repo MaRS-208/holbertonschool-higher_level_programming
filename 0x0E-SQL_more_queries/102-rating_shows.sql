@@ -8,4 +8,3 @@ WHERE g.name NOT IN (
 	ON g.id = sg.genre_id
 	WHERE s.title = "Dexter"
 )
-ORDER BY g.name;
