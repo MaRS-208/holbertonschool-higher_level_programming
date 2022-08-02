@@ -5,7 +5,6 @@ if (a && parseInt(a)) {
   for (let i = 0; i < a; i++) {
     console.log(c.repeat(a));
   }
-}
-else {
+} else {
   console.log('Missing size');
 }
