@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Write a script that lists all states with a name starting with N (upper N) from the database hbtn_0e_0_usa"""
+"""Write a script that takes in an argument and displays all values in the states table of hbtn_0e_0_usa where name matches the argument"""
 
 if __name__ == "__main__":
     import MySQLdb
@@ -9,7 +9,7 @@ if __name__ == "__main__":
 
     cur = db.cursor()
 
-    cur.execute("SELECT * FROM states WHERE states.name LIKE 'N%' ORDER BY states.id")
+    cur.execute("SELECT * FROM states WHERE states.name LIKE '{}' ORDER BY states.id".format(argv[4]))
     sts = cur.fetchall()
     for st in sts:
         print (st)
