@@ -18,7 +18,7 @@ if __name__ == "__main__":
         JOIN states ON cities.state_id = states.id\
         WHERE states.name = %(state)s\
         ORDER BY cities.id"
-    cur.execute(q, {'state' : argv[4]})
+    cur.execute(q, {'state': argv[4]})
     cts = cur.fetchall()
     print(", ".join(ct[0] for ct in cts))
     cur.close()
