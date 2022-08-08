@@ -14,4 +14,7 @@ if __name__ == "__main__":
     {argv[2]}@localhost/{argv[3]}')
     with Session(bind=engine) as session:
         q = session.query(State).first()
-        print(f'{q.id}: {q.name}')
+        if q is None:
+            pass
+        else:
+            print(f'{q.id}: {q.name}')
