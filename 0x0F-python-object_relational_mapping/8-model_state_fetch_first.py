@@ -15,6 +15,6 @@ if __name__ == "__main__":
     with Session(bind=engine) as session:
         q = session.query(State).first()
         if q is None:
-            pass
+            print(f'Nothing')
         else:
             print(f'{q.id}: {q.name}')
