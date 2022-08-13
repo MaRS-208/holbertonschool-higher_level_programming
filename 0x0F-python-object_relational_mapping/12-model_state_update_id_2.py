@@ -6,6 +6,7 @@ State object from the database hbtn_0e_6_usa"""
 if __name__ == "__main__":
     from sqlalchemy.orm import Session
     from sqlalchemy import (create_engine)
+    from sqlalchemy import select 
     from model_state import Base
     from model_state import State
     from sys import argv
