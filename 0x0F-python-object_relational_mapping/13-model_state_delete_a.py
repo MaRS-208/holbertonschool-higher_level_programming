@@ -4,6 +4,8 @@ containing the letter a from the database hbtn_0e_6_usa"""
 
 
 if __name__ == "__main__":
+
+
     from sqlalchemy.orm import Session
     from sqlalchemy import (create_engine)
     from model_state import Base, State
@@ -15,8 +17,7 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
 
     session = Session(engine)
-    for state in session.query(State).filter(
-            State.name.contains('a')):
+    for state in session.query(State).filter(State.name.contains('a')):
         session.delete(state)
     session.commit()
     session.close()
