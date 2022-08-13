@@ -16,7 +16,7 @@ if __name__ == "__main__":
 
     Base.metadata.create_all(engine)
 
-    session = Session(engine)
+    with  Session(engine) as session:
     q = select(State).filter(State.name.contains('a'))
     r = session.execute(q).all()
     for row in r:
