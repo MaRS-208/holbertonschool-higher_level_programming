@@ -13,8 +13,10 @@ if __name__ == "__main__":
                             argv[1], argv[2], argv[3]), pool_pre_ping=True)
     Base.metadata.create_all(engine)
     session = Session(engine)
-    for state in session.query(State).order_by(State.id):
-        for city in session.query(City).filter(
-                City.state_id == state.id).order_by(City.id):
-            print("{}: ({}) {}".format(state.name, city.id, city.name))
+    cities_list = session.query(City, State)\
+                         .filter(City.state_id == State.id)\
+                         .order_by(City.id)\
+                         .all()
+    for state, city in cities_list:
+        print("{}: ({}) {}".format(city.name, state.id, state.name))
     session.close()
