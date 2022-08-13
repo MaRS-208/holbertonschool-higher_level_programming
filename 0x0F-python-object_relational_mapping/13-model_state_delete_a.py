@@ -7,7 +7,7 @@ if __name__ == '__main__':
 
     from sys import argv
     from model_state import Base, State
-    from sqlalchemy import (create_engine)
+    from sqlalchemy import create_engine, select
     from sqlalchemy.orm import Session
 
     engine = create_engine(f'mysql+mysqldb://{argv[1]}:\
@@ -15,8 +15,9 @@ if __name__ == '__main__':
 
     Base.metadata.create_all(engine)
 
-    session = Session(engine)
-    for state in session.query(State).filter(State.name.contains('a')):
-        session.delete(state)
-    session.commit()
-    session.close()
+    with Session(engine) as session:
+        q = select(State).filter(State.name.ilike('%a%'))
+        r = session.execute(q).all()
+        for row in r:
+            session.delete(row[0])
+        session.commit()
