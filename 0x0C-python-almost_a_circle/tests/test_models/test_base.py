@@ -17,3 +17,8 @@ class BaseTests(unittest.TestCase):
         """tests if id is working with args"""
         b1 = Base(8)
         self.assertEqual(b1.id, 8)
+
+    def test_to_json_string(self):
+        """tests if json is wrking"""
+        b1 = Base.to_json_string(None)
+        
