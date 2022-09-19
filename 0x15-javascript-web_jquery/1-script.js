@@ -1,1 +1,3 @@
-$('header').animate({'color', '#FF0000'});
+$(document).ready(function(){
+  $("header").css("color", "red");
+});
