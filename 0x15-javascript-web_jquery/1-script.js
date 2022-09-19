@@ -1,1 +1,1 @@
-$(this).css('header', 'color', '#FF0000');
+$('header').animate({'color', '#FF0000'});
